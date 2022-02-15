@@ -1,7 +1,6 @@
 src
 tsconfig.json
-.prttierignore
-.prettierrc
+.prettier*
 .pnp.*
 .yarn
 .yarnrc.yml
