@@ -37,19 +37,19 @@ export abstract class Route {
 	 * @param req The express request object
 	 * @param res The express response object
 	 */
-    public patch?(req: Request, res: Response): unknown;
+	public patch?(req: Request, res: Response): unknown;
 	/**
 	 * Handler for a PUT request on this route.
 	 * @param req The express request object
 	 * @param res The express response object
 	 */
-    public put?(req: Request, res: Response): unknown;
+	public put?(req: Request, res: Response): unknown;
 	/**
 	 * Handler for a HEAD request on this route.
 	 * @param req The express request object
 	 * @param res The express response object
 	 */
-    public head?(req: Request, res: Response): unknown;
+	public head?(req: Request, res: Response): unknown;
 	/**
 	 * The internal express instance used for this route.
 	 * @type {Express}
@@ -68,14 +68,44 @@ export abstract class Route {
 	/**
 	 * The internal method to register this route to the express instance. Should only be called by the RouteManager.
 	 */
-    public registerRoute() {
-        if (this.get) this.app.get(this.options.path, ...(this.options.middleware ?? []), this.get.bind(this));
-        if (this.post) this.app.post(this.options.path, ...(this.options.middleware ?? []), this.post.bind(this));
-        if (this.delete) this.app.delete(this.options.path, ...(this.options.middleware ?? []), this.delete.bind(this));
-        if (this.patch) this.app.patch(this.options.path, ...(this.options.middleware ?? []), this.patch.bind(this));
-        if (this.put) this.app.put(this.options.path, ...(this.options.middleware ?? []), this.put.bind(this));
-        if (this.head) this.app.head(this.options.path, ...(this.options.middleware ?? []), this.head.bind(this));
-    }
+	public registerRoute() {
+		if (this.get)
+			this.app.get(
+				this.options.path,
+				...(this.options.middleware ?? []),
+				this.get.bind(this)
+			);
+		if (this.post)
+			this.app.post(
+				this.options.path,
+				...(this.options.middleware ?? []),
+				this.post.bind(this)
+			);
+		if (this.delete)
+			this.app.delete(
+				this.options.path,
+				...(this.options.middleware ?? []),
+				this.delete.bind(this)
+			);
+		if (this.patch)
+			this.app.patch(
+				this.options.path,
+				...(this.options.middleware ?? []),
+				this.patch.bind(this)
+			);
+		if (this.put)
+			this.app.put(
+				this.options.path,
+				...(this.options.middleware ?? []),
+				this.put.bind(this)
+			);
+		if (this.head)
+			this.app.head(
+				this.options.path,
+				...(this.options.middleware ?? []),
+				this.head.bind(this)
+			);
+	}
 }
 
 /**

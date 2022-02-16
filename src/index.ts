@@ -1,2 +1,2 @@
 export * from './route';
-export * from './routeManager'
+export * from './routeManager';
