@@ -3,7 +3,7 @@ import express, { RequestHandler, type Express } from 'express';
 import { promises as fs } from 'fs';
 import { OpenAPIV3 } from 'openapi-types';
 import path from 'path';
-import { Route } from './route';
+import { Route } from './Route';
 
 /**
  * The manager to manage and register all {@link Route}s.
