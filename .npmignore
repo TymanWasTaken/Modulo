@@ -5,4 +5,7 @@ tsconfig.json
 .yarn
 .yarnrc.yml
 .vscode
+.vim
 test
+dist/tsconfig.tsbuildinfo
+README.md
