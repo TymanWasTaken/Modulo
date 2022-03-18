@@ -18,7 +18,8 @@
 	},
 	"scripts": {
 		"build": "yarn tsc",
-		"prepare": "yarn build"
+		"prepare": "yarn build",
+		"prepack": "yarn build"
 	},
 	"dependencies": {
 		"body-parser": "^1.19.1",
