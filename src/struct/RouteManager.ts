@@ -45,7 +45,7 @@ export class RouteManager {
 		this.app = express();
 		this.middleware = middleware ?? [];
 		for (const handler of this.middleware) {
-			this.app.use(middleware)
+			this.app.use(handler)
 		}
 		this.routes = [];
 		this.spec = spec;
