@@ -44,8 +44,9 @@ export class RouteManager {
 		this.routePath = routePath;
 		this.app = express();
 		this.middleware = middleware ?? [];
-		this.middleware.push(bodyParser.json());
-		this.middleware.push(bodyParser.urlencoded({ extended: true }));
+		for (const handler of this.middleware) {
+			this.app.use(middleware)
+		}
 		this.routes = [];
 		this.spec = spec;
 	}
