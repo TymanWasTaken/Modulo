@@ -78,7 +78,16 @@ export class RouteManager {
 			}
 			instance.registerRoute();
 			if (instance.options.spec)
-				this.spec.paths[instance.options.path] = instance.options.spec;
+				this.spec.paths[
+					instance.options.path
+						.split('/')
+						.map(p => 
+						     p.startsWith(':') 
+						     ? `{${p.substring(1)}}` 
+						     : p
+						)
+						.join('/')
+				] = instance.options.spec;
 			this.routes.push(instance);
 		}
 		// Add callback for /openapi.json
